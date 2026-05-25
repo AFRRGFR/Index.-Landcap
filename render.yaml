@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: greenscape-landscaping
+    runtime: static
+    staticPublishPath: .
+    buildCommand: echo "No build needed for static site"
+    startCommand: echo "Static site ready"
+    envVars:
+      - key: PORT
+        value: 3000

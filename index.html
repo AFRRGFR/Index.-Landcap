@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenScape Landscaping - Maintenance Visit Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">🌿 GreenScape Landscaping</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#booking">Booking</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to GreenScape Landscaping</h1>
+            <p>Professional Maintenance Services for Beautiful Outdoor Spaces</p>
+            <button class="cta-button" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">Book a Maintenance Visit</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🔪 Lawn Mowing</h3>
+                    <p>Professional grass cutting and lawn care with precision equipment.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🌱 Landscaping Design</h3>
+                    <p>Custom landscape design tailored to your outdoor vision.</p>
+                </div>
+                <div class="service-card">
+                    <h3>💧 Irrigation Services</h3>
+                    <p>Efficient watering systems and maintenance.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🌳 Tree Care</h3>
+                    <p>Trimming, pruning, and maintenance for healthy trees.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🧹 Cleanup & Removal</h3>
+                    <p>Debris removal and seasonal cleanup services.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🪴 Garden Planting</h3>
+                    <p>Professional planting and garden bed preparation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <h2>Schedule Your Maintenance Visit</h2>
+            <form id="bookingForm" class="booking-form">
+                <!-- Customer Information -->
+                <fieldset>
+                    <legend>Customer Information</legend>
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9\-\+\(\) ]+" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Property Address *</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                </fieldset>
+
+                <!-- Service Selection -->
+                <fieldset>
+                    <legend>Service Type *</legend>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services" value="Lawn Mowing">
+                            Lawn Mowing
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services" value="Landscaping Design">
+                            Landscaping Design
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services" value="Irrigation Services">
+                            Irrigation Services
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services" value="Tree Care">
+                            Tree Care
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services" value="Cleanup & Removal">
+                            Cleanup & Removal
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services" value="Garden Planting">
+                            Garden Planting
+                        </label>
+                    </div>
+                </fieldset>
+
+                <!-- Available Time Slots -->
+                <fieldset>
+                    <legend>Select Visit Date & Time *</legend>
+                    <div class="form-group">
+                        <label for="visitDate">Preferred Date *</label>
+                        <input type="date" id="visitDate" name="visitDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="timeSlot">Time Slot *</label>
+                        <select id="timeSlot" name="timeSlot" required>
+                            <option value="">-- Select a time slot --</option>
+                            <option value="8:00 AM - 10:00 AM">8:00 AM - 10:00 AM</option>
+                            <option value="10:00 AM - 12:00 PM">10:00 AM - 12:00 PM</option>
+                            <option value="12:00 PM - 2:00 PM">12:00 PM - 2:00 PM</option>
+                            <option value="2:00 PM - 4:00 PM">2:00 PM - 4:00 PM</option>
+                            <option value="4:00 PM - 6:00 PM">4:00 PM - 6:00 PM</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- Additional Information -->
+                <fieldset>
+                    <legend>Additional Information</legend>
+                    <div class="form-group">
+                        <label for="description">Service Description</label>
+                        <textarea id="description" name="description" rows="5" placeholder="Tell us more about your landscaping needs..."></textarea>
+                    </div>
+                    <div class="form-group checkbox-single">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms" name="terms">
+                            I agree to the terms and conditions
+                        </label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="submit-button">Book Your Visit</button>
+            </form>
+            <div id="formMessage" class="form-message"></div>
+        </div>
+    </section>
+
+    <!-- Service History Section -->
+    <section id="history" class="service-history">
+        <div class="container">
+            <h2>Your Service History</h2>
+            <div class="history-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Service</th>
+                            <th>Duration</th>
+                            <th>Status</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyBody">
+                        <tr>
+                            <td>2026-05-20</td>
+                            <td>Lawn Mowing</td>
+                            <td>2 hours</td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td>Front and back lawn maintenance</td>
+                        </tr>
+                        <tr>
+                            <td>2026-05-15</td>
+                            <td>Tree Care</td>
+                            <td>3 hours</td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td>Trimmed oak trees near fence</td>
+                        </tr>
+                        <tr>
+                            <td>2026-05-10</td>
+                            <td>Garden Planting</td>
+                            <td>2.5 hours</td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td>Planted spring flowers and shrubs</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Our Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Lawn Mowing</h3>
+                    <p class="price">$45-$75</p>
+                    <p>Per visit</p>
+                </div>
+                <div class="pricing-card">
+                    <h3>Landscaping Design</h3>
+                    <p class="price">$200-$500</p>
+                    <p>Consultation & design</p>
+                </div>
+                <div class="pricing-card">
+                    <h3>Irrigation Services</h3>
+                    <p class="price">$100-$300</p>
+                    <p>Per visit</p>
+                </div>
+                <div class="pricing-card">
+                    <h3>Tree Care</h3>
+                    <p class="price">$150-$400</p>
+                    <p>Per service</p>
+                </div>
+                <div class="pricing-card">
+                    <h3>Cleanup & Removal</h3>
+                    <p class="price">$75-$200</p>
+                    <p>Per visit</p>
+                </div>
+                <div class="pricing-card">
+                    <h3>Garden Planting</h3>
+                    <p class="price">$100-$350</p>
+                    <p>Per project</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Before & After Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder before">BEFORE</div>
+                    <p>Overgrown lawn maintenance</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder after">AFTER</div>
+                    <p>Beautifully manicured lawn</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder before">BEFORE</div>
+                    <p>Unkempt garden beds</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder after">AFTER</div>
+                    <p>Professional landscaping design</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder before">BEFORE</div>
+                    <p>Dead tree removal needed</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder after">AFTER</div>
+                    <p>Tree trimming and care</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder before">BEFORE</div>
+                    <p>Cluttered outdoor space</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder after">AFTER</div>
+                    <p>Clean and organized landscape</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Customer Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"GreenScape completely transformed our backyard! The team is professional and efficient. Highly recommended!"</p>
+                    <p class="testimonial-author">- Sarah Johnson</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Amazing attention to detail. They really understand what we wanted for our landscape. Best decision ever!"</p>
+                    <p class="testimonial-author">- Michael Chen</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Reliable, professional, and very affordable. We use them every month and are very satisfied with their work."</p>
+                    <p class="testimonial-author">- Emily Rodriguez</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The team showed up on time, worked diligently, and left everything clean. Outstanding service!"</p>
+                    <p class="testimonial-author">- David Williams</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I was impressed with their knowledge and creativity. They suggested improvements I hadn't thought of."</p>
+                    <p class="testimonial-author">- Jessica Thompson</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"From the initial consultation to the final project, everything was handled perfectly. Worth every penny!"</p>
+                    <p class="testimonial-author">- Robert Martinez</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>GreenScape Landscaping</h4>
+                    <p>Transforming outdoor spaces into beautiful landscapes.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📞 (555) 123-4567</p>
+                    <p>📧 info@greenscapelandscaping.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
+                    <p>Sat: 9:00 AM - 4:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 GreenScape Landscaping. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
